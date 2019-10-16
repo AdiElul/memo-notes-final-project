@@ -35,7 +35,7 @@ export class NoteGrid extends Component {
                 key={note.id}
                 color={note.color}
                 onDelete={this.props.onNoteDelete.bind(null, note)}
-                onEdit={this.props.onNoteEdit.bind( note)}
+                
           
               >
                 {note.about}

@@ -1,0 +1,13 @@
+@media screen and (max-width: 500px) {
+    .header .nav-link {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+.navbar-brand {
+  color: rgb(247, 138, 145);
+}
+.navbar-brand:hover {
+  color: rgb(252, 109, 118);
+}

@@ -1,44 +1,56 @@
 html,
 body {
-  background-color: white;
+  font-family: 'Shadows Into Light', 'Tangerine', Arial;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   height: 100%;
   width: 100%;
   color: black;
+  position: relative;
+  z-index: 1;
+  font-weight: 300;
+
+  background-image: url(https://images.pexels.com/photos/399161/pexels-photo-399161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-repeat: no-repeat;
+  background-size:100%;
+ 
 }
+@media screen and (max-width:992px) {
+  body {
+    background-color:#e9ccd0;
+ 
+  }
+}
+
+
 html .note-container {
-  margin-top: 50px;
   height: 100%;
   width: 100%;
   text-align: center;
-  padding-top: 30px;
+ 
 }
 * {
   box-sizing: border-box;
 }
 .note-box {
-  background-color: #ffffff;
   padding: 20px 10px;
   max-width: 100%;
-  min-height: 400px;
+  min-height:600px;
   color: black;
-  text-align: center;
+
 }
-@media (min-width: 400px) {
+@media screen and (max-width: 992px) {
   .note-box {
     display: inline-block;
     width: 100%;
+    background-color:#e9ccd0;
+ 
   }
 }
 * {
   box-sizing: border-box;
 }
-body {
-  font-family: sans-serif;
-  font-weight: 300;
-  background-color: white;
-}
+
 #content {
   display: -webkit-box;
   display: -webkit-flex;
@@ -53,6 +65,7 @@ body {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  
 }
 .note {
   width: 200px;
@@ -62,7 +75,7 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 2px;
   padding: 10px;
-  margin:7px;
+  margin: 10px;
   -webkit-transition: box-shadow 0.3s;
   transition: box-shadow 0.3s;
   white-space: pre-wrap;
@@ -70,30 +83,38 @@ body {
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word;
-  position: relative;
+  border-radius:5px;
+  font-size: 20px;
 }
 .note:hover {
+  cursor: pointer;
+  z-index: 1;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .delete-note {
-  position: absolute;
-  top: 5px;
-  right: 5px;
+  position: relative;
+  z-index: 1;
+  top: -10px;
+  right: -80px;
   display: none;
   color: black;
   cursor: pointer;
 }
 .note:hover .delete-note {
-  display: block;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
 }
 .note-editor {
+  position: relative;
+  z-index: 2;
   width: 100%;
   max-width: 600px;
   padding: 16px;
   margin: 16px auto;
   background-color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  border-radius: 2px;
+  border-radius:5px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -108,7 +129,7 @@ body {
   width: 100%;
   resize: none;
   margin: 5px;
-  font-size: 14px;
+  font-size: 18px;
   border: none;
   font-weight: 300;
 }
@@ -117,18 +138,18 @@ body {
 }
 .add-button {
   width: 100px;
-  background-color: #D8CECA;
+  background-color: #d8ceca;
   border-radius: 28px;
-  border: 1px solid #D8CECA;
+  border: 1px solid #d8ceca;
   cursor: pointer;
-  color:black;
+  color: black;
   font-size: 14px;
   padding: 8px 8px;
   text-transform: uppercase;
   text-decoration: none;
 }
 .add-button:hover {
-  background-color: #F2F89B;
+  background-color: #f2f89b;
 }
 .add-button:active {
   position: relative;
@@ -139,19 +160,35 @@ body {
 }
 .notes-grid {
   margin: 0 auto;
-  overflow: hidden;
+  width:80%;
 }
+@media screen and (max-width: 992px) {
+  .notes-grid {
+    width:65%;
+ 
+  }
+}
+
 .notes-app {
-  max-width: 830px;
+  position: relative;
+  right: 100px;
+  z-index: 0;
   width: 100%;
   margin: 0 auto;
 }
+@media screen and (max-width: 992px) {
+  .notes-app {
+    right:0px;
+ 
+  }
+}
+
 .app-header {
   text-align: center;
   font-weight: 500;
   color: grey;
   text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.5);
-  margin-bottom: 40px;
+  margin-top:70px;
 }
 .controls {
   display: flex;
@@ -211,16 +248,14 @@ body {
   margin: 0 auto 16px;
   background-color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  border-radius: 2px;
+  border-radius:5px;
   display: flex;
   border: none;
   font-size: 14px;
   font-weight: 300;
+  position: relative;
+  z-index: 2;
 }
 .noteSearch:focus {
   outline: 0;
-}
-
-.Edit-note{
-margin-left: 0px;
 }
